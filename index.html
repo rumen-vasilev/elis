@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Песен за Елис</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0f0f14; color: #f2f2f5; text-align: center; padding: 24px;
+  }
+  .card { max-width: 360px; }
+  .spinner {
+    width: 28px; height: 28px; margin: 0 auto 20px;
+    border: 3px solid rgba(255,255,255,.25);
+    border-top-color: #ff2d55; border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  h1 { font-size: 1.2rem; font-weight: 600; margin: 0 0 8px; }
+  p  { opacity: .7; margin: 0 0 20px; line-height: 1.5; }
+  a.btn {
+    display: inline-block; padding: 11px 22px; border-radius: 999px;
+    background: #ff2d55; color: #fff; text-decoration: none; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner" aria-hidden="true"></div>
+    <h1>Зарежда се песента…</h1>
+    <p>Ако видеото не се отвори само, натисни бутона.</p>
+    <a class="btn" id="link" href="#">▶ Гледай във YouTube</a>
+  </div>
+
+  <script>
+    /* ▼▼▼ ЕДИНСТВЕНОТО, КОЕТО СМЕНЯШ при нов ъплоуд:
+           постави тук новия YouTube линк (между кавичките) ▼▼▼ */
+    const YOUTUBE_URL = "https://youtu.be/VIDEO_ID";
+    /* ▲▲▲ останалото не пипай ▲▲▲ */
+
+    document.getElementById("link").setAttribute("href", YOUTUBE_URL);
+    location.replace(YOUTUBE_URL);
+  </script>
+</body>
+</html>
